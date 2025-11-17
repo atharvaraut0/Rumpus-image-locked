@@ -1,13 +1,14 @@
 //Env Setup
 let pg;
-let ivoryMedium, ivoryBold, ivoryItalic, eugenio;
 let cnv;
 let img;
 
-//Preload Text///////////////////////////////////////////////////////////////
+//Preload Image///////////////////////////////////////////////////////////////
 function preload() {
   img = loadImage('rumpus logo 1.png');
 }
+
+//Math Extra ///////////////////////////////////////////////////////////////
 
 function clamp (value, min, max) {
   if (value > max) return max
@@ -94,7 +95,6 @@ function draw() {
       //Assign Displacements
 
       wave = int(sin(frameCount * speedMultiplier + (x + y) * offsetMultiplier * 0.1) * mainAmp * distance);
-
       ambient = (sin(frameCount * speedMultiplier * 2 + floor((x + y) / (height / width)) * offsetMultiplier) * ambAmp * ambDist);
 
       dx += wave;
