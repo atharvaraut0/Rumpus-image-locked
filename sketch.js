@@ -9,24 +9,34 @@ function preload() {
   img = loadImage('rumpus logo 1.png');
 }
 
+function clamp (value, min, max) {
+  if (value > max) return max
+  if (value < min) return min
+  return value
+}
 
 //Main Sketch Setup////////////////////////////////////////////////////////////
 
 function setup() {
-  cnv = createCanvas(960, int(windowHeight / 1.4), P2D);
-  cnv.parent('kinetic-type');
-  pg = createGraphics(width, height, P2D);
-  frameRate(30);
+  // cnv = createCanvas(clamp(int(windowWidth * 0.8),20,960) , clamp(int(windowHeight / 1.4),20,540), P2D);
+  // cnv.parent('kinetic-type');
+  // pg = createGraphics(width, height, P2D);
+  // frameRate(30);
 
 }
 
 
 function draw() {
 
+  cnv = createCanvas(clamp(int(windowWidth * 0.8),20,960) , clamp(int(windowHeight / 1.4),20,540), P2D);
+  cnv.parent('kinetic-type');
+  pg = createGraphics(width, height, P2D);
+  frameRate(30);
+
   //Global Vars
-  let mainAmp = 50;
-  let ambAmp = 3;
-  let tiles = 130;
+  let mainAmp = clamp(int(width * 0.052),20,50);
+  let ambAmp = clamp(int(width * 0.003),1,3);
+  let tiles = clamp(int(width * 0.125),80,150);
   let mouseDist = 140;
   let offsetMultiplier = 3;
   let speedMultiplier = 0.1;
