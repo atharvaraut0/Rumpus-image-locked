@@ -21,7 +21,7 @@ function setup() {
   // cnv = createCanvas(clamp(int(windowWidth * 0.8),20,960) , clamp(int(windowHeight / 1.4),20,540), P2D);
   // cnv.parent('kinetic-type');
   // pg = createGraphics(width, height, P2D);
-  // frameRate(30);
+  frameRate(30);
 
 }
 
@@ -31,7 +31,7 @@ function draw() {
   cnv = createCanvas(clamp(int(windowWidth * 0.8),20,960) , clamp(int(windowHeight / 1.4),20,540), P2D);
   cnv.parent('kinetic-type');
   pg = createGraphics(width, height, P2D);
-  frameRate(30);
+  
 
   //Global Vars
   let mainAmp = clamp(int(width * 0.052),20,50);
